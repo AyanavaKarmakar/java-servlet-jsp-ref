@@ -14,6 +14,10 @@
     <servlet>
         <servlet-name>SquareServlet</servlet-name>
         <servlet-class>software.ayanavakarmakar.servlejspref.SquareServlet</servlet-class>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>karmakar</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>SquareServlet</servlet-name>

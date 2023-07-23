@@ -1,5 +1,6 @@
 package software.ayanavakarmakar.servlejspref;
 
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,6 +18,9 @@ public class SquareServlet extends HttpServlet {
         ServletContext context = getServletContext();
         String name = context.getInitParameter("name");
         String phone = context.getInitParameter("phone");
-        out.print(name + " uses " + phone);
+        out.print("servlet context: " + name + " uses " + phone);
+        ServletConfig config = getServletConfig();
+        String cname = config.getInitParameter("name");
+        out.print("servlet config: name- " + cname);
     }
 }
