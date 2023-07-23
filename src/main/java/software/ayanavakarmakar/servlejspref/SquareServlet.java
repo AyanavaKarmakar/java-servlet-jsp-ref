@@ -1,5 +1,6 @@
 package software.ayanavakarmakar.servlejspref;
 
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,5 +14,9 @@ public class SquareServlet extends HttpServlet {
         int result = Integer.parseInt(request.getParameter("result"));
         PrintWriter out = response.getWriter();
         out.println("square of the result is " + result * result);
+        ServletContext context = getServletContext();
+        String name = context.getInitParameter("name");
+        String phone = context.getInitParameter("phone");
+        out.print(name + " uses " + phone);
     }
 }
